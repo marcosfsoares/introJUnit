@@ -3,6 +3,8 @@ package com.everis.calculadorasimples;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.AssertionsKt;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -26,6 +28,7 @@ public class CalculadoraTest {
     static Calculadora calculadora;
 
     @Test
+    //@Disabled
     public void testaSomaMenosIngenuo() {
         Calculadora myCalc = new Calculadora();
 
@@ -81,7 +84,7 @@ public class CalculadoraTest {
     void validaMultiplasSomasArqCSV(double parcela1, double parcela2, double resultadoEsperado) {
         assertEquals(resultadoEsperado, calculadora.soma(parcela1, parcela2));
     }
-
+        
     @Test
     public void testaExcecao() {
         assertThrows(ArithmeticException.class, () -> {
